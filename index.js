@@ -46,10 +46,10 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'what',
-        message: 'What is your project and what problem will it solve? (Required)',
-        validate: whatInput => {
-            if (whatInput) {
+        name: 'description',
+        message: 'Give a description of your project? (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
                 return true;
             } else {
                 console.log('Please enter what your project is!');
@@ -57,25 +57,13 @@ const questions = [
             }
         }
     },
+
     {
         type: 'input',
-        name: 'why',
-        message: 'Why did you create this project? (Required)',
-        validate: whyInput => {
-            if (whyInput) {
-                return true;
-            } else {
-                console.log('Please enter why you created this project!');
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'how',
+        name: 'usage',
         message: 'How will someone use this? (Required)',
-        validate: howInput => {
-            if (howInput) {
+        validate: usageInput => {
+            if (usageInput) {
                 return true;
             } else {
                 console.log('Please enter what your project is!');
