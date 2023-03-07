@@ -1,4 +1,15 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
+function renderContributingSection(confirmContributers, data) {
+  if (!confirmContributers) {
+    return `
+  Thank you for your interest in helping out; however, I will not be accepting contributions from third parties.
+    `;
+  } else {
+    return `
+  ${data}
+    `;
+  }
+}
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license !== 'no license') {
@@ -22,6 +33,15 @@ function renderLicenseLink(license) {
   }
 }
 
+function renderLicenseTOC(license) {
+  if (license !== 'no license') {
+  return `
+  * [License](#license)
+    `;
+  } else {
+    return ' ';
+  }
+ }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -43,7 +63,9 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
+
   ## Table-of-Contents
+
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
